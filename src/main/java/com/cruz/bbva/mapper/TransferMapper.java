@@ -12,5 +12,6 @@ public interface TransferMapper {
     @Mapping(target = "idTransfer", source = "transfer.idTransfer")
     TransferDTO transferToTransferDTO(Transfer transfer);
 
+    @Mapping(target = "idTransfer", ignore = true) // Ignore transferID during mapping from DTO to entity
     Transfer TransferDTOTotransfer(TransferDTO transferDTO);
 }
