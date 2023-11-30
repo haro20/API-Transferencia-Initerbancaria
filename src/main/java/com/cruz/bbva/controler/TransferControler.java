@@ -7,7 +7,10 @@ import com.cruz.bbva.service.TransferService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,9 +36,20 @@ public class TransferControler {
         return transferService.getAllTransferences();
     }
 
-    @GetMapping("/{id}")
+   /* @GetMapping("/{id}")
     public TransferDTO getById(@PathVariable("id") Long id) {
         return transferService.getTransferencesById(id);
+    }*/
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TransferDTO> getById(@PathVariable("id") Long id){
+        TransferDTO transferDTO;
+        try {
+             transferDTO = transferService.getTransferencesById(id);
+            return  new ResponseEntity<>(transferDTO, HttpStatus.OK);
+        }catch (EntityNotFoundException exe){
+            return new ResponseEntity(exe.getMessage(), HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping
