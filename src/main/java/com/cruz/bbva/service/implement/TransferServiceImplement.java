@@ -1,6 +1,5 @@
 package com.cruz.bbva.service.implement;
 
-
 import com.cruz.bbva.DTO.TransferDTO;
 import com.cruz.bbva.entity.Transfer;
 import com.cruz.bbva.mapper.TransferMapper;
@@ -9,7 +8,6 @@ import com.cruz.bbva.service.TransferService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,8 +28,6 @@ public class TransferServiceImplement implements TransferService {
                 .map(transferMapper::transferToTransferDTO)
                 .collect(Collectors.toList());
     }
-
-
 
     @Override
     public TransferDTO getTransferencesById(Long idTransac) {

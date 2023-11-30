@@ -18,8 +18,7 @@ public class TransferDTO {
     private String destinationAccountNumber;
     private BigDecimal amount;
     private String currency;
-
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss") // Formato de fecha
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime date;
-    private String stateTransfer; // completada or pendiente
+    private String stateTransfer;
 }

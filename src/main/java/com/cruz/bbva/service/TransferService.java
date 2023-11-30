@@ -1,8 +1,6 @@
 package com.cruz.bbva.service;
 
 import com.cruz.bbva.DTO.TransferDTO;
-import com.cruz.bbva.entity.Transfer;
-
 import java.util.List;
 
 public interface TransferService {

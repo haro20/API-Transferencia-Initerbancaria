@@ -1,6 +1,5 @@
 package com.cruz.bbva.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,8 +26,6 @@ public class Transfer {
     private String destinationAccountNumber;
     private BigDecimal amount;
     private String currency;
-
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss") // Formato de fecha
     private LocalDateTime date;
-    private String stateTransfer; // completada or pendiente
+    private String stateTransfer;
 }

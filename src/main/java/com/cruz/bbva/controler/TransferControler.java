@@ -1,8 +1,6 @@
 package com.cruz.bbva.controler;
 
-
 import com.cruz.bbva.DTO.TransferDTO;
-import com.cruz.bbva.entity.Transfer;
 import com.cruz.bbva.service.TransferService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -12,14 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/transac")
 public class TransferControler {
 
-    @Autowired//permite enlazar con mis servicios de TransferService
+    @Autowired
     private TransferService transferService;
 
     @Operation(
@@ -31,15 +28,10 @@ public class TransferControler {
             @ApiResponse(responseCode = "404", description = "cuando no le mandas el id de la transferencia")
     })
 
-    @GetMapping// se expone el servicio
+    @GetMapping
     public List<TransferDTO> getAllTran() {
         return transferService.getAllTransferences();
     }
-
-   /* @GetMapping("/{id}")
-    public TransferDTO getById(@PathVariable("id") Long id) {
-        return transferService.getTransferencesById(id);
-    }*/
 
     @GetMapping("/{id}")
     public ResponseEntity<TransferDTO> getById(@PathVariable("id") Long id){

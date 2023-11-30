@@ -30,8 +30,8 @@ public class BankAccount {
     @JoinColumn(name = "idCustomer")
     private Customer customer;
 
-    private BigDecimal balance; // saldo
-    private String accountType; // Ahorro o Corriente
+    private BigDecimal balance;
+    private String accountType;
     private String currency;
     private LocalDateTime openingDateAccount;
     private String stateAccount;

@@ -2,18 +2,17 @@ package com.cruz.bbva.DTO;
 
 import com.cruz.bbva.entity.BankAccount;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 import java.util.List;
 
-
 @Getter
 @Setter
+@NoArgsConstructor
 public class CustomerDTO {
 
     private Long idCustomer;
-
     private String customerName;
     private String customerAddress;
     private String customerPhone;
