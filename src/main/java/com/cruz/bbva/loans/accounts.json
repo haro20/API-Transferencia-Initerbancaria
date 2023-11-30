@@ -1,0 +1,19 @@
+{
+  "status": {
+    "code": "0000",
+    "message": "No se encontró el id de la transferencia"
+  },
+  "data": {
+    "lisTranferences": [
+      {
+        "idTransfer": 1,
+        "originAccountNumber": "CuentaOrigen456",
+        "destinationAccountNumber": "CuentaDestino123",
+        "amount": 10000.00,
+        "currency": "PEN",
+        "date": "2023-11-28T12:30:45",
+        "stateTransfer": "Completada"
+      }
+    ]
+  }
+}
