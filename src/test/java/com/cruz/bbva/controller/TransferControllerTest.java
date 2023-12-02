@@ -34,7 +34,7 @@ class TransferControllerTest {
     void setUp(){
         MockitoAnnotations.openMocks(this);
     }
-
+//test 1
     @Test
     void testGetAllTrans() {
 
